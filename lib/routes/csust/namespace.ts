@@ -1,7 +1,7 @@
 import type { Namespace } from '@/types';
 
 export const namespace: Namespace = {
-    name: 'NPR (National Public Radio)',
-    url: 'npr.org',
-    lang: 'en',
+    name: '长沙理工大学',
+    url: 'www.csust.edu.cn',
+    lang: 'zh-CN',
 };

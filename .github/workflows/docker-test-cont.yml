@@ -67,6 +67,7 @@ jobs:
           docker run -d \
             --name rsshub \
             -e NODE_ENV=dev \
+            -e NODE_OPTIONS='--max-http-header-size=32768' \
             -e LOGGER_LEVEL=debug \
             -e ALLOW_USER_HOTLINK_TEMPLATE=true \
             -e ALLOW_USER_SUPPLY_UNSAFE_DOMAIN=true \
@@ -116,7 +117,7 @@ jobs:
 
       - name: Print Docker container logs
         if: ${{ always() }}
-        run: docker logs rsshub # logs/combined.log? Not so readable...
+        run: docker logs rsshub || true # logs/combined.log? Not so readable...
 
   fail-build:
     name: Fail build
